@@ -410,10 +410,10 @@ class Item
      * Add an extension to the item
      *
      * @param string $key
-     * @param array $value
+     * @param string|array $value
      * @return Item
      */
-    public function addExtension($key, array $value)
+    public function addExtension($key, $value)
     {
         if (!is_string($key)) {
             throw new InvalidArgumentException('Extension key must be a string');
