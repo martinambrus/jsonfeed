@@ -410,17 +410,17 @@ class Item
      * Add an extension to the item
      *
      * @param string $key
-     * @param string|array $value
+     * @param mixed $value
      * @return Item
      */
-    public function addExtension($key, $value)
+    public function addExtension($key, $value): Item
     {
         if (!is_string($key)) {
             throw new InvalidArgumentException('Extension key must be a string');
         }
 
-        if ( is_string( $value ) ) {
-          $value = [ $value ];
+        if (is_string($value)) {
+            $value = [$value];
         }
 
         $this->extensions[$key] = $value;
