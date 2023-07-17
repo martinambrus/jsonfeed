@@ -144,7 +144,7 @@ class FeedReader implements ReaderInterface
                 default:
                     try {
                         if ('_' === $key[0]) {
-                            $item->addExtension(substr($key, 1), $value);
+                            $item->addExtension(substr($key, 1), (is_array($value) ?? [$value]));
                         } else {
                             $this->accessor->setValue($item, $key, $value);
                         }
