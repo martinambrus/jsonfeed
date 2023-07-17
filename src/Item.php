@@ -419,6 +419,10 @@ class Item
             throw new InvalidArgumentException('Extension key must be a string');
         }
 
+        if ( is_string( $value ) ) {
+          $value = [ $value ];
+        }
+
         $this->extensions[$key] = $value;
 
         return $this;
